@@ -1,0 +1,6 @@
+#dashboard {
+    border-bottom: 3px solid black;
+    height: 45vh;
+    min-height: 250px;
+    max-height: 350px;
+}

@@ -1,15 +1,17 @@
 import "../../Styles/body.css";
 import { Outlet } from  "react-router-dom";
 import React from "react";
+import Dashboard from "../../Views/Dashboard/Dashboard";
 import NavBarComponent from "./NavBarComponent";
 const Layout = ({ children }) => {
     return (
         <>
         <NavBarComponent />
-        <div id="main-body">
+        <div id="main-body" class="vw100">
+            <Dashboard />
             <Outlet />
         </div>
         </>
     )
 }
-export default Layout; 
+export default Layout;

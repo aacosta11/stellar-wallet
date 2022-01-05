@@ -1,8 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import "../../Styles/dashboard.css";
 const Dashboard = props => {
     return (
         <>
-            <h2>this will be the dashboard.</h2>
+        <div id="dashboard">
+            <h2>account deets</h2>
+            <Link to="/history" >History</Link>
+            <Link to="/" >Home</Link>
+        </div>
         </>
     )
 }

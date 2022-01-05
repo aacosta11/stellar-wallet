@@ -68,12 +68,28 @@
 .X-ai-center {
     align-items: center;
 }
+/* ----------------------------- flex-direction ----------------------------- */
+.X-fd-column {
+    flex-direction: column;
+}
+.X-fd-row {
+    flex-direction: row;
+}
 /* -------------------------------------------------------------------------- */
 /*                                    GRID                                    */
 /* -------------------------------------------------------------------------- */
 .G {
     display: -ms-grid;
     display: grid;
+}
+/* ------------------------------ row template ------------------------------ */
+.G-two-cols {
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+.G-one-col {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
 }
 /* -------------------------------------------------------------------------- */
 /*                                    TEXT                                    */
