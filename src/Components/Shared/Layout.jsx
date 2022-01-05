@@ -1,15 +1,14 @@
+import "../../Styles/body.css";
 import { Outlet } from  "react-router-dom";
 import React from "react";
 import NavBarComponent from "./NavBarComponent";
-import BlurBodyComponent from "./BlurBodyComponent";
 const Layout = ({ children }) => {
     return (
         <>
         <NavBarComponent />
-        <BlurBodyComponent>
-            {children}
-        </BlurBodyComponent>
-        <Outlet />
+        <div id="main-body">
+            <Outlet />
+        </div>
         </>
     )
 }

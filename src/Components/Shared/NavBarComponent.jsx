@@ -1,16 +1,15 @@
 import React from "react";
 import "../../Styles/navbar.css";
-export default props => {
+const NavbarComponent = props => {
     return (
         <>
-        <div className="X X-ai-center X-jc-space-around vw-100">
-            <div className="title">
-                <h1>some words</h1>
-            </div>
-            <div className="menu">
-                <h2>a menu</h2>
-            </div>
+        <div class="fixed vw100 ta-center">
+            <h2>logo</h2>
+        </div>
+        <div id="nav-menu" class="fixed">
+            <p class="small-text">hitbox for menu</p>
         </div>
         </>
     )
 }
+export default NavbarComponent;
