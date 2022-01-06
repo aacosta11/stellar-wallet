@@ -1,0 +1,15 @@
+#choose-transaction {
+    width: 12rem;
+    height: 2rem;
+    border: 3px solid black;
+}
+.blackground {
+    background-color: black;
+}
+.whiteground {
+    background-color: white;
+}
+.active {
+    background-color: blue;
+    color: #fff;
+}
