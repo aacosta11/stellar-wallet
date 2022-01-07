@@ -7,9 +7,19 @@ const OperationFormComponent = props => {
     const allOperations = {
         payment: <PaymentFormComponent />
     };
-    const addAnOperation = (operation,index) => {
+    const setOperationForThisOne = (operation,index) => {
         let operationArrayCopy = [...currentOperations];
         operationArrayCopy[index] = {operation:operation,index:index};
+        setCurrentOperations(operationArrayCopy);
+    }
+    const addAnOperation = () => {
+        let operationArrayCopy = [...currentOperations];
+        operationArrayCopy.push({operation:'',index:operationArrayCopy.length - 1});
+        setCurrentOperations(operationArrayCopy);
+    }
+    const deleteThisOperation = index => {
+        let operationArrayCopy = [...currentOperations];
+        operationArrayCopy.splice(index,1);
         setCurrentOperations(operationArrayCopy);
     }
     return (
@@ -18,18 +28,22 @@ const OperationFormComponent = props => {
             {currentOperations.map((op,i)=>{
                 return (
                     <div className="X column-gap-1-rem" key={i}>
-                        <div className="X X-jc-center X-ai-center operation-number-box">
-                            <h4>{i + 1}</h4>
+                        <div>
+                            <div className="X X-jc-center X-ai-center operation-number-box">
+                                <h4>{i + 1}</h4>
+                            </div>
+                            {i != 0 && <div className="delete-operation transition-ease" onClick={e=>deleteThisOperation(i)}></div>}
+                            
                         </div>
                         <div className="X X-fd-column width-100-percent">
-                            <ChooseOperationComponent setOperation={{addAnOperation}} index={i}/>
+                            <ChooseOperationComponent setOperation={{setOperationForThisOne}} index={i}/>
                             {allOperations[op.operation]}
                         </div>
                     </div>
                 )
             })}
             <div className="width-100-percent X X-jc-center">
-                <div id="add-operation" class="transition-ease" ></div>
+                <div id="add-operation" className="transition-ease" onClick={addAnOperation}></div>
             </div>
         </div>
 

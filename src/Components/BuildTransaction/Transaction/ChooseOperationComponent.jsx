@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 const ChooseOperationComponent = ({setOperation, index}) => {
-    const { addAnOperation } = setOperation;
+    const { setOperationForThisOne } = setOperation;
     const [operationToAdd,setOperationToAdd] = useState('');
     const handleOperationSelection = e => {
         setOperationToAdd(e.target.value);
-        addAnOperation(e.target.value,index);
+        setOperationForThisOne(e.target.value,index);
     }
     return (
         <div className="X X-fd-column">
