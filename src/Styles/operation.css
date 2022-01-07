@@ -1,0 +1,16 @@
+.operation-number-box {
+    width: 30px;
+    height: 30px;
+    border: 2px solid black;
+}
+#add-operation {
+    width: 20px;
+    height: 20px;
+    border: 2px solid green;
+    border-radius: 50%;
+    background-color: green;
+}
+#add-operation:hover {
+    transform: scale(110%);
+    /* border-color: black; */
+}

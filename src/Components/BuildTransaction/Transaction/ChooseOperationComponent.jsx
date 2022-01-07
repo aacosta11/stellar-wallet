@@ -1,23 +1,25 @@
-import React from "react";
-
-const ChooseOperationComponent = ({setOperation}) => {
-    const { currentOperation, setCurrentOperation } = setOperation;
+import React, { useState } from "react";
+const ChooseOperationComponent = ({setOperation, index}) => {
+    const { addAnOperation } = setOperation;
+    const [operationToAdd,setOperationToAdd] = useState('');
     const handleOperationSelection = e => {
-        setCurrentOperation(e.target.value);
+        setOperationToAdd(e.target.value);
+        addAnOperation(e.target.value,index);
     }
     return (
-        <div>
-            <div className="X X-fd-column">
+        <div className="X X-fd-column">
                 <label htmlFor="operation-type">Operation Type: </label>
                 <select name="operation-type" id="operation-type"
-                onChange={handleOperationSelection} value={currentOperation}
+                onChange={handleOperationSelection} value={operationToAdd}
                 >
                     <option value="">Select operation type</option>
                     <option value="createAccount" disabled>Create Account</option>
                     <option value="payment">Payment</option>
                     <option value="pathPaymentStrictSend" disabled>Path Payment Strict Send</option>
                     <option value="pathPaymentStrictReceive" disabled>Path Payment Strict Receive</option>
-                    <option value="manageSellOffer" disabled>Manage Sell Offer</option>
+
+                    {/* new options will be added slowly */}
+                    {/* <option value="manageSellOffer" disabled>Manage Sell Offer</option>
                     <option value="manageBuyOffer" disabled>Manage Buy Offer</option>
                     <option value="createPassiveSellOffer" disabled>Create Passive Sell Offer</option>
                     <option value="setOptions" disabled>Set Options</option>
@@ -35,9 +37,9 @@ const ChooseOperationComponent = ({setOperation}) => {
                     <option value="clawbackClaimableBalance" disabled>Clawback Claimable Balance</option>
                     <option value="setTrustLineFlags" disabled>Set Trust Line Flags</option>
                     <option value="liquidityPoolDeposit" disabled>Liquidity Pool Deposit</option>
-                    <option value="liquidityPoolWithdraw" disabled>Liquidity Pool Withdraw</option>
+                    <option value="liquidityPoolWithdraw" disabled>Liquidity Pool Withdraw</option> */}
                 </select>
-            </div>
+            
         </div>
     )
 }

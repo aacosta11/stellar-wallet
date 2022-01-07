@@ -10,7 +10,9 @@ const Layout = ({ children }) => {
         <NavBarComponent />
         <div id="main-body" className="width-100-percent">
             <Dashboard />
-            <Outlet />
+            <div id="section-content">
+                <Outlet />
+            </div>
         </div>
         <FooterComponent />
         </>

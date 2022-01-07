@@ -130,6 +130,21 @@
 .X-flex-3 {
     flex: 3;
 }
+.X-flex-4 {
+    flex: 4;
+}
+.X-flex-5 {
+    flex: 5;
+}
+.X-flex-6 {
+    flex: 6;
+}
+.X-flex-7 {
+    flex: 7;
+}
+.X-flex-8 {
+    flex: 8;
+}
 /* ----------------------------- justify content ---------------------------- */
 .X-jc-center {
     justify-content: center;
