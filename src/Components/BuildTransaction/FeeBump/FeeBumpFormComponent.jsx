@@ -2,7 +2,7 @@ import React from "react";
 const FeeBumpFormComponent = props => {
     return (
         <>
-        <h4>fee bump form</h4>
+        <h4>Fee Bumps are currently unavailable.</h4>
         </>
     )
 }
