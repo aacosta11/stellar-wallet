@@ -1,16 +1,14 @@
-import React, { useState } from "react";
-const ChooseOperationComponent = ({setOperation, index}) => {
+import React from "react";
+const ChooseOperationComponent = ({setOperation, id, currentOperation}) => {
     const { setOperationForThisOne } = setOperation;
-    const [operationToAdd,setOperationToAdd] = useState('');
     const handleOperationSelection = e => {
-        setOperationToAdd(e.target.value);
-        setOperationForThisOne(e.target.value,index);
+        setOperationForThisOne(e.target.value,id);
     }
     return (
         <div className="X X-fd-column">
                 <label htmlFor="operation-type">Operation Type: </label>
                 <select name="operation-type" id="operation-type"
-                onChange={handleOperationSelection} value={operationToAdd}
+                onChange={handleOperationSelection} value={currentOperation}
                 >
                     <option value="">Select operation type</option>
                     <option value="createAccount" disabled>Create Account</option>

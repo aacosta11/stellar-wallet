@@ -1,23 +1,28 @@
 import React, { useState } from "react";
 import FilterInputs from "../../../Shared/FilterInputs";
-const PaymentFormComponent = props => {
+const PaymentFormComponent = ({data}) => {
+
     const { replaceSpecialCharacters, onlyNumbers, onlyIntegers } = FilterInputs;
-    const [destination,setDestination] = useState('');
-    const [asset,setAsset] = useState('native');
-    const [amount,setAmount] = useState(0);
-    const [sourceAccount,setSourceAccount] = useState('');
-    const handleNumberInputs = e => {
+    const [destination,setDestination] = useState(data.destination);
+    const [asset,setAsset] = useState(data.asset);
+    const [amount,setAmount] = useState(data.amount);
+    const [sourceAccount,setSourceAccount] = useState(data.sourceAccount);
+
+    const handleAmountInput = e => {
         const inputName = e.target.name;
         let inputValue = onlyNumbers(replaceSpecialCharacters(e.target.value));
         if (inputName === "amount") setAmount(onlyIntegers(inputValue));
+        // data[inputName] = onlyIntegers(inputValue);
     }
     const handlePublicKeyInputs = e => {
         const inputName = e.target.name;
         let publicKeyFiltered = replaceSpecialCharacters(e.target.value).toUpperCase();
+        // data[inputName] = publicKeyFiltered;
+        // data[inputName] = replaceSpecialCharacters(e.target.value).toUpperCase();
         inputName === "destination" ? setDestination(publicKeyFiltered) : setSourceAccount(publicKeyFiltered);
     }
     return (
-        <div className="X X-fd-column">
+        <div className="X X-fd-column" >
             <div className="X X-fd-column">
                 <label htmlFor="destination">Destination: </label>
                 <input type="text" name="destination" 
@@ -39,16 +44,17 @@ const PaymentFormComponent = props => {
             <div className="X X-fd-column">
                 <label htmlFor="amount">Amount: </label>
                 <input type="text" name="amount" 
-                onChange={handleNumberInputs} value={amount}
+                onChange={handleAmountInput} value={amount}
                 />
             </div>
             <div className="X X-fd-column">
-                <label htmlFor="source-account">Source Account: </label>
-                <input type="text" name="source-account" 
+                <label htmlFor="sourceAccount">Source Account: </label>
+                <input type="text" name="sourceAccount" 
                 placeholder="ex: GDPABHSV5BK3SW3ZWXDW6C4FJM3JD4R4YJ4VDZCJTA5YZXTQKWPIW4B4"
                 onChange={handlePublicKeyInputs} value={sourceAccount}
                 />
             </div>
+            {JSON.stringify(data)}
         </div>
     )
 }

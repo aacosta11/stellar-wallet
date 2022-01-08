@@ -95,6 +95,12 @@
 .row-gap-2-px {
     row-gap: 2px;
 }
+.row-gap-3-px {
+    row-gap: 3px;
+}
+.row-gap-4-px {
+    row-gap: 4px;
+}
 .row-gap-1-rem {
     row-gap: 1rem;
 }

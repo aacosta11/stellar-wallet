@@ -3,9 +3,10 @@ import TransactionFormComponent from "../../Components/BuildTransaction/Transact
 import ChooseTransactionTypeComponent from "../../Components/BuildTransaction/ChooseTransactionTypeComponent";
 import OperationFormComponent from "../../Components/BuildTransaction/Transaction/OperationFormComponent";
 import FeeBumpFormComponent from "../../Components/BuildTransaction/FeeBump/FeeBumpFormComponent";
+import TransactionContext from "../../Context/TransactionContext";
 const BuildTransaction = props => {
     const [transactionType,setTransactionType] = useState('transaction');
-
+    const [operations,setOperations] = useState([{operation:'', operationData: {}, id:1}]);
     return (
         <div>
         <h3>BuildTransaction.jsx</h3>
@@ -13,12 +14,14 @@ const BuildTransaction = props => {
         {
             transactionType === "transaction" ? 
             <>
-            <div className="X X-fd-column row-gap-2-rem">
-                <TransactionFormComponent />
-                <OperationFormComponent />
-            </div>
+            <TransactionContext.Provider value={{operations,setOperations}}>
+                <div className="X X-fd-column row-gap-2-rem">
+                    <TransactionFormComponent />
+                    <OperationFormComponent />
+                </div>
+            </TransactionContext.Provider>
             </>
-            : 
+            :
             <>
             <FeeBumpFormComponent />
             </>
