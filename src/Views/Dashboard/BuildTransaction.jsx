@@ -7,6 +7,13 @@ import TransactionContext from "../../Context/TransactionContext";
 const BuildTransaction = props => {
     const [transactionType,setTransactionType] = useState('transaction');
     const [operations,setOperations] = useState([{operation:'', operationData: {}, id:1}]);
+    const [transactionBaseInfo,setTransactionBaseInfo] = useState({
+        sourceAccount: '',
+        transactionSequenceNumber: '',
+        baseFee: 100,
+        memo: '',
+        timeBounds: 0
+    });
     return (
         <div>
         <h3>BuildTransaction.jsx</h3>
@@ -14,7 +21,7 @@ const BuildTransaction = props => {
         {
             transactionType === "transaction" ? 
             <>
-            <TransactionContext.Provider value={{operations,setOperations}}>
+            <TransactionContext.Provider value={{operations,setOperations,transactionBaseInfo,setTransactionBaseInfo}}>
                 <div className="X X-fd-column row-gap-2-rem">
                     <TransactionFormComponent />
                     <OperationFormComponent />

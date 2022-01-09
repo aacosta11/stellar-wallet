@@ -52,7 +52,7 @@ const OperationFormComponent = props => {
                             {/* DUPLICATE */}
                             <div className="duplicate-operation" onClick={e=>duplicateThisOperation(op.operation,op.id)}></div>
                             {/* DELETE */}
-                            {i !== 0 && <div className="delete-operation transition-ease" onClick={e=>deleteThisOperation(op.id)}></div>}
+                            {operations.length > 1 && <div className="delete-operation transition-ease" onClick={e=>deleteThisOperation(op.id)}></div>}
                         </div>
                         <div className="X X-fd-column width-100-percent">
                             {/* select operation type */}

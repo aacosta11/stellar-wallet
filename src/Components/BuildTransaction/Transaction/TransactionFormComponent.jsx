@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import FilterInputs from "../../Shared/FilterInputs";
+import TransactionContext from "../../../Context/TransactionContext";
 const TransactionFormComponent = props => {
     const { replaceSpecialCharacters, onlyNumbers, onlyIntegers } = FilterInputs;
-    const [sourceAccount,setSourceAccount] = useState('');
-    const [transactionSequenceNumber,setTransactionSequenceNumber] = useState('');
-    const [baseFee,setBaseFee] = useState(100);
-    const [memo,setMemo] = useState('');
-    const [timeBounds,setTimeBounds] = useState(0);
+    const { transactionBaseInfo,setTransactionBaseInfo } = useContext(TransactionContext);
+    const [transactionBase,setTransactionBase] = useState({
+        sourceAccount: '',
+        transactionSequenceNumber: '',
+        baseFee: 100,
+        memo: '',
+        timeBounds: 0
+    })
 
     // handle all number inputs
     const handleNumberInputChange = e => {
@@ -14,13 +18,15 @@ const TransactionFormComponent = props => {
         let inputName = e.target.name;
         let inputVariable = onlyNumbers(replaceSpecialCharacters(e.target.value));
         // set appropriate state variables to input value
-        if (inputName === "transaction-sequence-number") setTransactionSequenceNumber(inputVariable);
-        else if (inputName === "base-fee") setBaseFee(onlyIntegers(inputVariable));
-        else if (inputName === "time-bounds") setTimeBounds(onlyIntegers(inputVariable));
+        inputName === "transactionSequenceNumber" ? setTransactionBaseInfo({...transactionBaseInfo,[inputName]:[inputVariable]})
+        : setTransactionBaseInfo({...transactionBaseInfo,[inputName]:[onlyIntegers(inputVariable)]})
     };
 
     // handle source account input
-    const handleSourceAccountChange = e => setSourceAccount(replaceSpecialCharacters(e.target.value).toUpperCase());
+    const handleSourceAccountChange = e => setTransactionBaseInfo({
+        ...transactionBaseInfo,
+        sourceAccount:[replaceSpecialCharacters(e.target.value).toUpperCase()]
+        });
 
     return (
         <div>
@@ -28,41 +34,42 @@ const TransactionFormComponent = props => {
 
             {/* Source Account */}
             <div className="X X-fd-column">
-                <label htmlFor="source-account">Source Account: </label>
+                <label htmlFor="sourceAccount">Source Account: </label>
                 <input type="text" name="source-account"
-                onChange={handleSourceAccountChange} value={sourceAccount}
+                onChange={handleSourceAccountChange} value={transactionBaseInfo.sourceAccount}
                 placeholder="ex: GDPABHSV5BK3SW3ZWXDW6C4FJM3JD4R4YJ4VDZCJTA5YZXTQKWPIW4B4"
                 />
             </div>
 
             {/* Transaction Sequence Number */}
             <div className="X X-fd-column">
-                <label htmlFor="transaction-sequence-number">Transaction Sequence Number: </label>
-                <input type="text" name="transaction-sequence-number"
-                onChange={handleNumberInputChange} value={transactionSequenceNumber}/>
+                <label htmlFor="transactionSequenceNumber">Transaction Sequence Number: </label>
+                <input type="text" name="transactionSequenceNumber"
+                onChange={handleNumberInputChange} value={transactionBaseInfo.transactionSequenceNumber}/>
             </div>
 
             {/* Base Fee */}
             <div className="X X-fd-column">
-                <label htmlFor="base-fee">Base Fee: </label>
-                <input type="text" name="base-fee"
-                onChange={handleNumberInputChange} value={baseFee}/>
+                <label htmlFor="baseFee">Base Fee: </label>
+                <input type="text" name="baseFee"
+                onChange={handleNumberInputChange} value={transactionBaseInfo.baseFee}/>
             </div>
 
             {/* Memo */}
             <div className="X X-fd-column">
                 <label htmlFor="memo">Memo: </label>
                 <input type="text" name="memo" 
-                onChange={e=>setMemo(e.target.value)} value={memo}/>
+                onChange={e=>setTransactionBaseInfo({...transactionBaseInfo,memo:[e.target.value]})} value={transactionBaseInfo.memo}/>
             </div>
 
             {/* Time Bounds */}
             <div className="X X-fd-column">
-                <label htmlFor="time-bounds">Time Bounds: </label>
-                <input type="text" name="time-bounds"
-                onChange={handleNumberInputChange} value={timeBounds}/>
+                <label htmlFor="timeBounds">Time Bounds: </label>
+                <input type="text" name="timeBounds"
+                onChange={handleNumberInputChange} value={transactionBaseInfo.timeBounds}/>
             </div>
 
+            {JSON.stringify(transactionBaseInfo)}
         </div>
     )
 }
