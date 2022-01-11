@@ -1,25 +1,21 @@
 import React, { useState } from "react";
 import FilterInputs from "../../../Shared/FilterInputs";
 const PaymentFormComponent = ({data}) => {
-
     const { replaceSpecialCharacters, onlyNumbers, onlyIntegers } = FilterInputs;
-    const [destination,setDestination] = useState(data.destination);
-    const [asset,setAsset] = useState(data.asset);
-    const [amount,setAmount] = useState(data.amount);
-    const [sourceAccount,setSourceAccount] = useState(data.sourceAccount);
+    const { dataToDisplay, setDataToDisplay } = data;
+    const [paymentData,setPaymentData] = useState({...data})
 
     const handleAmountInput = e => {
         const inputName = e.target.name;
-        let inputValue = onlyNumbers(replaceSpecialCharacters(e.target.value));
-        if (inputName === "amount") setAmount(onlyIntegers(inputValue));
-        // data[inputName] = onlyIntegers(inputValue);
+        let inputValue = onlyIntegers(onlyNumbers(replaceSpecialCharacters(e.target.value)));
+        setDataToDisplay({...dataToDisplay,[inputName]:[inputValue]});
+        // data = {...paymentData};
     }
     const handlePublicKeyInputs = e => {
         const inputName = e.target.name;
         let publicKeyFiltered = replaceSpecialCharacters(e.target.value).toUpperCase();
-        // data[inputName] = publicKeyFiltered;
-        // data[inputName] = replaceSpecialCharacters(e.target.value).toUpperCase();
-        inputName === "destination" ? setDestination(publicKeyFiltered) : setSourceAccount(publicKeyFiltered);
+        setDataToDisplay({...dataToDisplay,[inputName]:[publicKeyFiltered]});
+        // data = {...paymentData};
     }
     return (
         <div className="X X-fd-column" >
@@ -27,13 +23,13 @@ const PaymentFormComponent = ({data}) => {
                 <label htmlFor="destination">Destination: </label>
                 <input type="text" name="destination" 
                 placeholder="ex: GDPABHSV5BK3SW3ZWXDW6C4FJM3JD4R4YJ4VDZCJTA5YZXTQKWPIW4B4"
-                onChange={handlePublicKeyInputs} value={destination}
+                onChange={handlePublicKeyInputs} value={dataToDisplay.destination}
                 />
             </div>
             <div className="X X-fd-column">
                 <label htmlFor="asset">Asset: </label>
                 <select name="asset" id="asset" 
-                onChange={e=>setAsset(e.target.value)} value={asset}
+                onChange={e=>setDataToDisplay({...dataToDisplay,asset:[e.target.value]})} value={dataToDisplay.asset}
                 disabled
                 >
                     <option value="native">Native</option>
@@ -44,17 +40,17 @@ const PaymentFormComponent = ({data}) => {
             <div className="X X-fd-column">
                 <label htmlFor="amount">Amount: </label>
                 <input type="text" name="amount" 
-                onChange={handleAmountInput} value={amount}
+                onChange={handleAmountInput} value={dataToDisplay.amount}
                 />
             </div>
             <div className="X X-fd-column">
                 <label htmlFor="sourceAccount">Source Account: </label>
                 <input type="text" name="sourceAccount" 
                 placeholder="ex: GDPABHSV5BK3SW3ZWXDW6C4FJM3JD4R4YJ4VDZCJTA5YZXTQKWPIW4B4"
-                onChange={handlePublicKeyInputs} value={sourceAccount}
+                onChange={handlePublicKeyInputs} value={dataToDisplay.sourceAccount}
                 />
             </div>
-            {JSON.stringify(data)}
+            {JSON.stringify(dataToDisplay)}
         </div>
     )
 }

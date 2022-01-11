@@ -1,16 +1,9 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import FilterInputs from "../../Shared/FilterInputs";
 import TransactionContext from "../../../Context/TransactionContext";
 const TransactionFormComponent = props => {
     const { replaceSpecialCharacters, onlyNumbers, onlyIntegers } = FilterInputs;
     const { transactionBaseInfo,setTransactionBaseInfo } = useContext(TransactionContext);
-    const [transactionBase,setTransactionBase] = useState({
-        sourceAccount: '',
-        transactionSequenceNumber: '',
-        baseFee: 100,
-        memo: '',
-        timeBounds: 0
-    })
 
     // handle all number inputs
     const handleNumberInputChange = e => {
@@ -69,7 +62,6 @@ const TransactionFormComponent = props => {
                 onChange={handleNumberInputChange} value={transactionBaseInfo.timeBounds}/>
             </div>
 
-            {JSON.stringify(transactionBaseInfo)}
         </div>
     )
 }

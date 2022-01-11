@@ -1,0 +1,14 @@
+
+#submit-transaction {
+    width: 5rem;
+    height: auto;
+    padding: 5px 4rem;
+    background-color: blue;
+    border-radius: 15px;
+    color: #fff;
+    align-self: center;
+    cursor: pointer;
+}
+#submit-transaction:hover {
+    transform: scale(110%);
+}

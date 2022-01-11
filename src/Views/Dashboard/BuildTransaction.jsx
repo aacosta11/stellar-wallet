@@ -3,6 +3,7 @@ import TransactionFormComponent from "../../Components/BuildTransaction/Transact
 import ChooseTransactionTypeComponent from "../../Components/BuildTransaction/ChooseTransactionTypeComponent";
 import OperationFormComponent from "../../Components/BuildTransaction/Transaction/OperationFormComponent";
 import FeeBumpFormComponent from "../../Components/BuildTransaction/FeeBump/FeeBumpFormComponent";
+import SubmitTransaction from "../../Components/BuildTransaction/Transaction/SubmitTransaction";
 import TransactionContext from "../../Context/TransactionContext";
 const BuildTransaction = props => {
     const [transactionType,setTransactionType] = useState('transaction');
@@ -14,6 +15,7 @@ const BuildTransaction = props => {
         memo: '',
         timeBounds: 0
     });
+
     return (
         <div>
         <h3>BuildTransaction.jsx</h3>
@@ -25,6 +27,11 @@ const BuildTransaction = props => {
                 <div className="X X-fd-column row-gap-2-rem">
                     <TransactionFormComponent />
                     <OperationFormComponent />
+                    <SubmitTransaction />
+                    {JSON.stringify(transactionBaseInfo)}<br/>
+                    {operations.map((op,i)=>{
+                        return JSON.stringify(op)
+                    })}
                 </div>
             </TransactionContext.Provider>
             </>

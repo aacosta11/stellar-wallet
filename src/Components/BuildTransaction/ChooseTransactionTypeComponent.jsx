@@ -6,7 +6,7 @@ const ChooseTransactionTypeComponent = (props) => {
     const [isFeeBumpActive,setIsFeeBumpActive] = useState(false);
     const onChange = e => {
         props.transactionType(e);
-        if (e == "transaction") {
+        if (e === "transaction") {
             setIsTransactionActive(true);
             setIsFeeBumpActive(false);
         } else {

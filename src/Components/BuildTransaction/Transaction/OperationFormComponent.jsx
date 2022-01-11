@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import ChooseOperationComponent from "./ChooseOperationComponent";
 import DisplayOperations from "./OperationForms/DisplayOperations";
 import TransactionContext from "../../../Context/TransactionContext";
@@ -60,7 +60,6 @@ const OperationFormComponent = props => {
                             {/* operation form */}
                             <div id={op.id} onChange={e=>handleOperationDataChange(op.id,e.target)} >
                                 <DisplayOperations operation={op.operation} data={op.operationData} />
-
                             </div>
                         </div>
                     </div>
@@ -70,8 +69,6 @@ const OperationFormComponent = props => {
                 {/* add a blank operation */}
                 <div id="add-operation" className="transition-ease" onClick={addAnOperation}></div>
             </div>
-
-            {JSON.stringify(operations)}
 
         </div>
     )

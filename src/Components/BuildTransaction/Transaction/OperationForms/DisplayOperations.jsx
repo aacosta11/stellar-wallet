@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import DefaultOperationProps from "./DefaultOperationProps";
 import PaymentFormComponent from "./PaymentFormComponent";
 
@@ -11,11 +11,11 @@ const setDefaultProps = (operation,data) => {
     return data;
 }
 const DisplayOperations = ({operation,data}) => {
-    if (operation === '') return null;
-    setDefaultProps(operation,data);
+    const [dataToDisplay,setDataToDisplay] = useState(setDefaultProps(operation,data));
+
     const AllOperations = {
-        payment: <PaymentFormComponent data={data} />
+        payment: <PaymentFormComponent data={{dataToDisplay,setDataToDisplay}} />
     }
-    return AllOperations[operation];
+    return operation === '' ? null : AllOperations[operation];
 }
 export default DisplayOperations;
