@@ -4,7 +4,7 @@ a non-custodial wallet with aim to hold all assets associated with the Stellar N
 
 known bugs:
 
-- incorrect operation form data is shown after deleting an operetion
+- incorrect operation form data is shown after deleting an operetion (01.10.22)
 
 roadmap:
 
