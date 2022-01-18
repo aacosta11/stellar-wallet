@@ -30,7 +30,7 @@ const BuildTransaction = props => {
                     <SubmitTransaction />
                     {JSON.stringify(transactionBaseInfo)}<br/>
                     {operations.map((op,i)=>{
-                        return JSON.stringify(op)
+                        return <>{JSON.stringify(op)}<br/></>
                     })}
                 </div>
             </TransactionContext.Provider>

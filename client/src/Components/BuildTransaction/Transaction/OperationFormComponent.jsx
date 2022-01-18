@@ -59,7 +59,7 @@ const OperationFormComponent = props => {
                             <ChooseOperationComponent setOperation={{setOperationForThisOne}} currentOperation={op.operation} id={op.id}/>
                             {/* operation form */}
                             <div id={op.id} onChange={e=>handleOperationDataChange(op.id,e.target)} >
-                                <DisplayOperations operation={op.operation} data={op.operationData} />
+                                <DisplayOperations id={op.id} />
                             </div>
                         </div>
                     </div>
