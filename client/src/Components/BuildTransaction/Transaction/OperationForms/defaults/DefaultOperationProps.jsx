@@ -1,5 +1,4 @@
 
-
 // single properties
 const destination= '';
 const asset= 'native';
@@ -7,7 +6,7 @@ const sourceAccount= '';
 const amount= 0;
 
 const DefaultOperationProps = {
-    // lists with properties
+    // name of transactions with their default props
     'payment' : {destination,asset,sourceAccount,amount}
 }
 

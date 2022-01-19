@@ -49,6 +49,7 @@ const TransactionFormComponent = props => {
             </div>
 
             {/* Memo */}
+            {/**** optional ****/}
             <div className="X X-fd-column">
                 <label htmlFor="memo">Memo: </label>
                 <input type="text" name="memo" 
@@ -56,6 +57,7 @@ const TransactionFormComponent = props => {
             </div>
 
             {/* Time Bounds */}
+            {/**** optional ****/}
             <div className="X X-fd-column">
                 <label htmlFor="timeBounds">Time Bounds: </label>
                 <input type="text" name="timeBounds"

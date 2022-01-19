@@ -45,7 +45,6 @@ const OperationFormComponent = props => {
         let operationArrayCopy = operations.filter((op,i)=>op.id  !== id);
         setOperations(operationArrayCopy);
     }
-    // END OF MANAGE OPERATIONS
 
     return (
         <div className="X X-fd-column row-gap-2-rem">

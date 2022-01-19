@@ -7,6 +7,7 @@ const ChooseOperationComponent = ({setOperation, id, currentOperation}) => {
     return (
         <div className="X X-fd-column">
                 <label htmlFor="operation-type">Operation Type: </label>
+                {/* OPERATION TYPE */}
                 <select name="operation-type" id="operation-type"
                 onChange={handleOperationSelection} value={currentOperation}
                 >

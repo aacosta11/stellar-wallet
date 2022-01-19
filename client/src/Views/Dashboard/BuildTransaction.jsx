@@ -6,8 +6,11 @@ import FeeBumpFormComponent from "../../Components/BuildTransaction/FeeBump/FeeB
 import SubmitTransaction from "../../Components/BuildTransaction/Transaction/SubmitTransaction";
 import TransactionContext from "../../Context/TransactionContext";
 const BuildTransaction = props => {
+    // local state to control selected transaction type
     const [transactionType,setTransactionType] = useState('transaction');
+    // global list of user operations
     const [operations,setOperations] = useState([{operation:'', operationData: {}, id:1}]);
+    // global object with transaction's meta details
     const [transactionBaseInfo,setTransactionBaseInfo] = useState({
         sourceAccount: '',
         transactionSequenceNumber: '',
@@ -19,15 +22,21 @@ const BuildTransaction = props => {
     return (
         <div>
         <h3>BuildTransaction.jsx</h3>
+        {/* TRANSACTION TYPE */}
         <ChooseTransactionTypeComponent transactionType={e=>setTransactionType(e)}/>
         {
             transactionType === "transaction" ? 
             <>
             <TransactionContext.Provider value={{operations,setOperations,transactionBaseInfo,setTransactionBaseInfo}}>
                 <div className="X X-fd-column row-gap-2-rem">
+                    {/* TRANSACTION BASE FORM */}
                     <TransactionFormComponent />
+                    {/* OPERATION FORMS */}
                     <OperationFormComponent />
+                    {/* SUBMIT FORM */}
                     <SubmitTransaction />
+
+                    {/* temp display */}
                     {JSON.stringify(transactionBaseInfo)}<br/>
                     {operations.map((op,i)=>{
                         return <div key={i}>{JSON.stringify(op)}<br/></div>
@@ -37,6 +46,7 @@ const BuildTransaction = props => {
             </>
             :
             <>
+            {/* FEE BUMP FORM */}
             <FeeBumpFormComponent />
             </>
         }
