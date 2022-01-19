@@ -11,14 +11,14 @@ const TransactionFormComponent = props => {
         let inputName = e.target.name;
         let inputVariable = onlyNumbers(replaceSpecialCharacters(e.target.value));
         // set appropriate state variables to input value
-        inputName === "transactionSequenceNumber" ? setTransactionBaseInfo({...transactionBaseInfo,[inputName]:[inputVariable]})
-        : setTransactionBaseInfo({...transactionBaseInfo,[inputName]:[onlyIntegers(inputVariable)]})
+        inputName === "transactionSequenceNumber" ? setTransactionBaseInfo({...transactionBaseInfo,[inputName]:inputVariable})
+        : setTransactionBaseInfo({...transactionBaseInfo,[inputName]:onlyIntegers(inputVariable)})
     };
 
     // handle source account input
     const handleSourceAccountChange = e => setTransactionBaseInfo({
         ...transactionBaseInfo,
-        sourceAccount:[replaceSpecialCharacters(e.target.value).toUpperCase()]
+        sourceAccount:replaceSpecialCharacters(e.target.value).toUpperCase()
         });
 
     return (
@@ -52,7 +52,7 @@ const TransactionFormComponent = props => {
             <div className="X X-fd-column">
                 <label htmlFor="memo">Memo: </label>
                 <input type="text" name="memo" 
-                onChange={e=>setTransactionBaseInfo({...transactionBaseInfo,memo:[e.target.value]})} value={transactionBaseInfo.memo}/>
+                onChange={e=>setTransactionBaseInfo({...transactionBaseInfo,memo:e.target.value})} value={transactionBaseInfo.memo}/>
             </div>
 
             {/* Time Bounds */}

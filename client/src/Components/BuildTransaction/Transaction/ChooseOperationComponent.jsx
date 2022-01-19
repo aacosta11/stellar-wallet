@@ -17,6 +17,7 @@ const ChooseOperationComponent = ({setOperation, id, currentOperation}) => {
                     <option value="pathPaymentStrictReceive" disabled>Path Payment Strict Receive</option>
 
                     {/* new options will be added slowly */}
+                    
                     {/* <option value="manageSellOffer" disabled>Manage Sell Offer</option>
                     <option value="manageBuyOffer" disabled>Manage Buy Offer</option>
                     <option value="createPassiveSellOffer" disabled>Create Passive Sell Offer</option>

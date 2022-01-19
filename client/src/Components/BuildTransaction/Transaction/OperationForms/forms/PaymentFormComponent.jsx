@@ -1,21 +1,25 @@
-import React, { useState } from "react";
-import FilterInputs from "../../../Shared/FilterInputs";
-const PaymentFormComponent = ({data}) => {
+import React, { useState, useContext, useEffect } from "react";
+import TransactionContext from "../../../../../Context/TransactionContext";
+import FilterInputs from "../../../../Shared/FilterInputs";
+import DefaultOperationProps from "../defaults/DefaultOperationProps";
+const PaymentFormComponent = ({id}) => {
     const { replaceSpecialCharacters, onlyNumbers, onlyIntegers } = FilterInputs;
-    const { operation } = data;
-    const { operationData } = operation;
+    const { operations, setOperations } = useContext(TransactionContext);
+    const [ operationData, setOperationData ] = useState({...DefaultOperationProps.payment,...operations.find(op=>op.id === id).operationData});
+
+    useEffect(()=>{
+        setOperationData(operations.find(op=>op.id === id).operationData);
+    },[operations])
 
     const handleAmountInput = e => {
         const inputName = e.target.name;
         let inputValue = onlyIntegers(onlyNumbers(replaceSpecialCharacters(e.target.value)));
-        operationData({...operationData,[inputName]:[inputValue]});
-        // data = {...paymentData};
+        setOperationData({...operationData,[inputName]:inputValue})
     }
     const handlePublicKeyInputs = e => {
         const inputName = e.target.name;
         let publicKeyFiltered = replaceSpecialCharacters(e.target.value).toUpperCase();
-        operationData({...operationData,[inputName]:[publicKeyFiltered]});
-        // data = {...paymentData};
+        setOperationData({...operationData,[inputName]:publicKeyFiltered});
     }
     return (
         <div className="X X-fd-column" >

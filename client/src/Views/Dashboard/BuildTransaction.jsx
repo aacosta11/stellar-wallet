@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TransactionFormComponent from "../../Components/BuildTransaction/Transaction/TransactionFormComponent";
 import ChooseTransactionTypeComponent from "../../Components/BuildTransaction/ChooseTransactionTypeComponent";
-import OperationFormComponent from "../../Components/BuildTransaction/Transaction/OperationFormComponent";
+import OperationFormComponent from "../../Components/BuildTransaction/Transaction/OperationForms/OperationFormComponent";
 import FeeBumpFormComponent from "../../Components/BuildTransaction/FeeBump/FeeBumpFormComponent";
 import SubmitTransaction from "../../Components/BuildTransaction/Transaction/SubmitTransaction";
 import TransactionContext from "../../Context/TransactionContext";
@@ -30,7 +30,7 @@ const BuildTransaction = props => {
                     <SubmitTransaction />
                     {JSON.stringify(transactionBaseInfo)}<br/>
                     {operations.map((op,i)=>{
-                        return <>{JSON.stringify(op)}<br/></>
+                        return <div key={i}>{JSON.stringify(op)}<br/></div>
                     })}
                 </div>
             </TransactionContext.Provider>

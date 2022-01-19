@@ -1,16 +1,20 @@
 import React, { useContext } from "react";
-import ChooseOperationComponent from "./ChooseOperationComponent";
-import DisplayOperations from "./OperationForms/DisplayOperations";
-import TransactionContext from "../../../Context/TransactionContext";
-import "../../../Styles/operation.css";
+import ChooseOperationComponent from "../ChooseOperationComponent";
+import DisplayOperations from "./DisplayOperations";
+import TransactionContext from "../../../../Context/TransactionContext";
+import DefaultOperationProps from "./defaults/DefaultOperationProps";
+import "../../../../Styles/operation.css";
 const OperationFormComponent = props => {
     const { operations, setOperations } = useContext(TransactionContext); // look at BuildTransaction.jsx for context provider
 
     const handleOperationDataChange = (id,e) => {
         setTimeout(()=>{
             let operationArrayCopy = [...operations];
-            let operationToUpdate = operationArrayCopy.find(op=>op.id === id);
-            operationToUpdate.operationData = {...operationToUpdate.operationData,[e.name]:[e.value]}
+            operationArrayCopy.map(op=>{
+                if (op.id === id) {
+                    op.operationData = {...DefaultOperationProps[op.operation],...op.operationData,[e.name]:e.value}
+                }
+            })
             setOperations(operationArrayCopy)
         },50)
     }
@@ -18,7 +22,12 @@ const OperationFormComponent = props => {
     // MANAGE OPERATIONS
     const setOperationForThisOne = (operation,id) => { // change selected operation
         let operationArrayCopy = [...operations];
-        operationArrayCopy.find((op,i)=>op.id === id).operation = operation;
+        operationArrayCopy.map(op=>{
+            if (op.id === id) {
+                op.operation = operation;
+                op.operationData = {...DefaultOperationProps[op.operation],...op.operationData};
+            }
+        })
         setOperations(operationArrayCopy);
     }
     const addAnOperation = () => { // add blank operation
@@ -59,7 +68,7 @@ const OperationFormComponent = props => {
                             <ChooseOperationComponent setOperation={{setOperationForThisOne}} currentOperation={op.operation} id={op.id}/>
                             {/* operation form */}
                             <div id={op.id} onChange={e=>handleOperationDataChange(op.id,e.target)} >
-                                <DisplayOperations id={op.id} />
+                                <DisplayOperations id={op.id} operation={op.operation} />
                             </div>
                         </div>
                     </div>
