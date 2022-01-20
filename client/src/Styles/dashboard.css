@@ -5,11 +5,12 @@
     max-height: 450px;
 }
 .content {
-    width: 40%;
+    width: 45%;
     max-width: 900px;
     min-width: 300px;
     height: 8rem;
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
 #profile-pic-wrap {
