@@ -2,5 +2,31 @@
     border-bottom: 3px solid black;
     height: 45vh;
     min-height: 250px;
-    max-height: 350px;
+    max-height: 450px;
+}
+.content {
+    width: 40%;
+    max-width: 900px;
+    min-width: 300px;
+    height: 8rem;
+    margin: 0 auto;
+}
+
+#profile-pic-wrap {
+    width: auto;
+    max-width: 126px;
+    min-width: 80px;
+    padding-bottom: 5px;
+}
+
+#profile-pic {
+    border-radius: 50%;
+    height: 65%;
+}
+
+/* placeholder icons */
+.userButtonsIcon {
+    height: 10px;
+    width: 10px;
+    border: 2px solid black;
 }

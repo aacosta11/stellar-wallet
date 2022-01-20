@@ -67,8 +67,6 @@ const PaymentFormComponent = ({id}) => {
                 onChange={handlePublicKeyInputs} value={operationData.sourceAccount}
                 />
             </div>
-            {/* temp data display */}
-            {JSON.stringify(operationData)}
         </div>
     )
 }

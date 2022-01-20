@@ -1,4 +1,4 @@
-import "../../Styles/body.css";
+import "../../Styles/layout.css";
 import { Outlet } from  "react-router-dom";
 import React from "react";
 import Dashboard from "../../Views/Dashboard/Dashboard";

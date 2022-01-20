@@ -11,3 +11,9 @@
 .small-text {
     font-size: 12px;
 }
+#logo-wrap {
+    padding: .2rem 2rem;
+    background-color: rgba(0, 0, 0, 0.001);
+    
+    backdrop-filter: blur(10px);
+}
