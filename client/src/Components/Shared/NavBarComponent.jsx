@@ -7,9 +7,6 @@ const NavbarComponent = props => {
                     <h2>logo</h2>
                 </div>
             </div>
-            <div id="nav-menu" className="fixed">
-                <p className="small-text">hitbox for menu</p>
-            </div>
         </>)
 }
 export default NavbarComponent;
