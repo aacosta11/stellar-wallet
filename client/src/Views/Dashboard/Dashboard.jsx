@@ -5,9 +5,7 @@ import profilePic from "../../img/anon-profile.png";
 const Dashboard = props => {
     return (
         <>
-        <div id="dashboard">
-            <Link to="/history" >History</Link>
-            <Link to="/" >Home</Link>
+        <div id="dashboard" className="X X-ai-center">
             <div className="content X column-gap-1-rem blur-backdrop">
                 <div id="profile-pic-wrap" className="X X-jc-center X-ai-center" >
                     <img src={profilePic} alt="profile-pic" id="profile-pic" />
