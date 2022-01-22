@@ -12,6 +12,7 @@ const BuildTransaction = props => {
     const [operations,setOperations] = useState([{operation:'', operationData: {}, id:1}]);
     // global object with transaction's meta details
     const [transactionBaseInfo,setTransactionBaseInfo] = useState({
+        network: "testnet",
         sourceAccount: '',
         transactionSequenceNumber: '',
         baseFee: 100,

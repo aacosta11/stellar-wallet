@@ -14,10 +14,6 @@ html {
     border: 1px solid red;
 }
 
-.blur-backdrop {
-    background-color: transparent;
-    backdrop-filter: blur(10px);
-}
 
 /* -------------------------------------------------------------------------- */
 /*                                  POSITION                                  */
@@ -91,6 +87,11 @@ html {
 }
 .unblurred {
     filter: none;
+}
+.blur-backdrop {
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
 }
 /* -------------------------------------------------------------------------- */
 /*                                 TRANSITION                                 */

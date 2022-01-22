@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../../Styles/dashboard.css";
 import profilePic from "../../img/anon-profile.png";
 const Dashboard = props => {

@@ -1,17 +1,12 @@
-import IsBlurredContext from "./Context/IsBlurredContext";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./Components/Shared/Layout";
 import BuildTransaction from "./Views/Dashboard/BuildTransaction";
 import History from "./Views/Dashboard/History";
 import NotFound from "./Views/NotFound";
-import { useState } from "react";
 import './Styles/global.css';
 import './App.css';
 function App() {
-  const [isBlurred,setIsBlurred] = useState(false);
-  return (
-    <>
-    <IsBlurredContext.Provider value={{isBlurred,setIsBlurred}}>
+  return (<>
       <Routes>
         <Route path="/" element={<Layout />} >
           {/* defaulted to show build transaction */}
@@ -25,9 +20,6 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
-
-    </IsBlurredContext.Provider>
-    </>
-  );
+    </>);
 }
 export default App;
