@@ -2,9 +2,4 @@
 
 a non-custodial wallet with aim to hold all assets associated with the Stellar Network.
 
-feats. missing:
-
-- connect to api
-- fee bumps form
-- 'set to 5 minutes from now' for time bounds
-- add tab for transaction history
+front-end almost complete. once the i can successfully create a transaction on the Horizon API, will redo the front-end with custom made Framer Motion React components.
