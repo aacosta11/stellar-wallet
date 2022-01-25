@@ -141,6 +141,12 @@ html {
 .column-gap-2-px {
     column-gap: 2px;
 }
+.column-gap-3-px {
+    column-gap: 3px;
+}
+.column-gap-4-px {
+    column-gap: 4px;
+}
 .column-gap-1-rem {
     column-gap: 1rem;
 }
