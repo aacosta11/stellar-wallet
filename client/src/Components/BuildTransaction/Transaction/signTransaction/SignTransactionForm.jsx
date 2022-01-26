@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../../../../Styles/signTransactionForm.css";
+import AddSignature from "./AddSignature";
 const SignTransactionForm = props => {
     const labels = ["signing for","transaction envelope XDR","source account","sequence number","number of operations","number of signatures"]
     const [dataBoxes,setDataBoxes] = useState();
@@ -24,7 +25,7 @@ const SignTransactionForm = props => {
                     </>)
                 })}
             </div>
-
+            <AddSignature />
         </div>
     </>)
 }
