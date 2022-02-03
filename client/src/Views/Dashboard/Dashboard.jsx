@@ -4,15 +4,15 @@ import "../../Styles/dashboard.css";
 import profilePic from "../../img/anon-profile.png";
 import DemoKeysContext from "../../Context/DemoKeysContext";
 const Dashboard = props => {
-    const [keys,setKeys] = useState('');
-    useEffect(()=>{
-        fetchKeys()
-    },[])
-    async function fetchKeys() {
-        await axios.get('https://localhost:7114/Accounts/demo-keys')
-            .then(res=>console.log(res))
-            .catch(err=>console.log(err))
-    }
+    // const [keys,setKeys] = useState('');
+    // useEffect(()=>{
+    //     fetchKeys()
+    // },[])
+    // async function fetchKeys() {
+    //     await axios.get('https://localhost:7114/Accounts/demo-keys')
+    //         .then(res=>console.log(res))
+    //         .catch(err=>console.log(err))
+    // }
     return (
         <>
         <div id="dashboard" className="X X-ai-center">
