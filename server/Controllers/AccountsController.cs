@@ -14,6 +14,9 @@ namespace StellarWalletApi.Controllers;
 [Route("[controller]")]
 public class AccountsController : ControllerBase
 {
+    [HttpGet("")]
+    public string Hola() => "hola";
+
     [HttpGet("demo-keys")]
     public ActionResult<KeyPair> GetKeys() => GetKeyPairs.GetDemoKeys();
     
