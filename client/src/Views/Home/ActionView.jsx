@@ -4,6 +4,7 @@ const ActionView = ({action}) => {
     const {actionSelected,setActionSelected} = action;
     return (<>
         {actionSelected}
+        <p>&nbsp;</p>
         <button onClick={() => {setActionSelected("")}}>Back</button>
     </>)
 }
