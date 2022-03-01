@@ -2,7 +2,7 @@
 
 a non-custodial wallet aiming to hold all assets associated with the Stellar Network.
 
-[front-end preview](./preview/stellar-gif.gif)
+![front-end preview](./preview/stellar-gif.gif)
 
 ## Roadmap
 
