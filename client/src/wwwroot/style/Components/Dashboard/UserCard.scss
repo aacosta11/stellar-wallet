@@ -1,0 +1,25 @@
+@media only screen and (max-width: 400px) {
+    #userCard {
+        padding: 30px 5px;
+    }
+}
+
+
+#userCard {
+    // temp size
+    width: 50%;
+    max-width: 450px;
+    min-width: 300px;
+    height: 150px;
+    background-color: #fff;
+    border: 3px solid black;
+    padding: 30px 15px;
+    border-radius: 15px;
+    margin: 0 auto;
+    box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.719);
+}
+
+#generate-keys {
+    padding: 5px;
+    width: 100px;
+}

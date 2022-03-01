@@ -1,0 +1,1 @@
+export const ListOfActionNames = ['buildTransaction','signTransaction','submitTransaction'];

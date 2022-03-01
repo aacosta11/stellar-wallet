@@ -1,0 +1,21 @@
+#userCard-container {
+    height: 600px;
+    // background-color: rgb(44, 154, 250);
+    background: linear-gradient(-45deg, #8e52ee, #3ce7d9, #233ed5, #8e23d5);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

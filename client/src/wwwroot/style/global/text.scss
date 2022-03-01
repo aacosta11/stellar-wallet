@@ -1,0 +1,51 @@
+
+// text-align
+
+.ta-center {
+    text-align: center;
+}
+.ta-end {
+    text-align: end;
+}
+.ta-justify {
+    text-align: justify;
+}
+.ta-left {
+    text-align: left;
+}
+.ta-right {
+    text-align: right;
+}
+.ta-start {
+    text-align: start;
+}
+
+
+// text-decoration
+
+.td-none {
+    text-decoration: none;
+}
+.td-underline {
+    text-decoration: underline;
+}
+.td-line-through {
+    text-decoration: line-through;
+}
+.td-overline {
+    text-decoration: overline;
+}
+@supports (text-decoration: blink) {
+    .td-blink {
+        text-decoration: blink;
+    }
+}
+.td-inherit {
+    text-decoration: inherit;
+}
+.td-initial {
+    text-decoration: initial;
+}
+.td-unset {
+    text-decoration: unset;
+}

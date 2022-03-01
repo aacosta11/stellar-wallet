@@ -1,0 +1,23 @@
+
+// blur
+// blur(<length> | <percentage>)
+// blur(<length> | <percentage>, <color>)
+@supports (filter: blur()) and ((backdrop-filter: blur()) or (-webkit-backdrop-filter: blur())) {
+    .blur-5px {
+        filter: blur(5px);
+    }
+    .blur-10px {
+        filter: blur(10px);
+    }
+    .blur-backdrop-5px {
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+    }
+    .blur-backdrop-10px {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+    .no-blur {
+        filter: blur(0);
+    }
+}

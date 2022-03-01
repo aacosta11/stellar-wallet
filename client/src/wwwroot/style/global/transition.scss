@@ -1,0 +1,30 @@
+
+// transtitions defaulted to .3s
+
+.transition-ease-in-out {
+    transition: 0.3s ease-in-out;
+}
+.transition-ease {
+    transition: 0.3s ease;
+}
+.transition-ease-in {
+    transition: 0.3s ease-in;
+}
+.transition-ease-out {
+    transition: 0.3s ease-out;
+}
+.transition-linear {
+    transition: 0.3s linear;
+}
+.transition-inherit {
+    transition: inherit;
+}
+.transition-initial {
+    transition: initial;
+}
+.transition-unset {
+    transition: unset;
+}
+.transition-none {
+    transition: none;
+}

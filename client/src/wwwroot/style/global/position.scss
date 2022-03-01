@@ -1,0 +1,23 @@
+
+// relative
+.relative {
+    position: relative;
+}
+
+// absolute
+.absolute {
+    position: absolute;
+}
+
+// fixed
+.fixed {
+    position: fixed;
+}
+
+// sticky
+.sticky {
+    @supports (position: sticky) or (position: -webkit-sticky) {
+        position: -webkit-sticky;
+        position: sticky;
+    }
+}
