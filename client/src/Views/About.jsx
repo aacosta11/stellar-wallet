@@ -1,3 +1,4 @@
+// placeholder page for about
 import React from "react";
 
 const About = () => {
