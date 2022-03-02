@@ -1,9 +1,9 @@
 import React from "react";
 
 // imports of network interaction components
-import BuildTransaction from "../../NetworkInteraction/interactions/BuildTransaction/BuildTransaction";
-import SignTransaction from "../../NetworkInteraction/interactions/SignTransaction/SignTransaction";
-import SubmitTransaction from "../../NetworkInteraction/interactions/SubmitTransaction/SubmitTransaction";
+import BuildTransaction from "./BuildTransaction/BuildTransaction";
+import SignTransaction from "./SignTransaction/SignTransaction";
+import SubmitTransaction from "./SubmitTransaction/SubmitTransaction";
 
 // object of network interactions (key: network name, value: network interaction component)
 const ListOfActions = {

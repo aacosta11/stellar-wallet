@@ -1,6 +1,6 @@
 // display list of all interactions available
 import ListOfActions from "../../Components/Dashboard/Navigation/ListOfActions";
-import { ListOfActionNames } from "../../Components/Dashboard/Navigation/ListOfActionNames";
+import { ListOfActionNames } from "../../Components/NetworkInteraction/interactions/ListOfActionNames";
 import "../../wwwroot/style/Views/Home/MainView.scss";
 const MainView = ({action}) => {
     // state variable for the active interaction (empty if none selected)
