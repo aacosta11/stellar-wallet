@@ -1,4 +1,4 @@
-// wraps all children in stylings with universal class names
+// wraps all children in universal class names
 import "../../wwwroot/style/global/global.scss";
 import "../../wwwroot/style/global/filter.scss";
 import "../../wwwroot/style/global/flex.scss";

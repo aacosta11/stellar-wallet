@@ -4,6 +4,7 @@ import Tabs from "./Tabs";
 import { Outlet } from "react-router-dom";
 import "../../../wwwroot/style/Components/Dashboard/Navigation/NavigationLayout.scss";
 const NavigationLayout = (props) => {
+    // state variable for the active tab
     const [selectedTab,setSelectedTab] = useState(1);
 
     return (<>
