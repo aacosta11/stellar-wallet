@@ -1,6 +1,7 @@
 import React from "react";
 import "../../wwwroot/style/Components/Dashboard/UserCard.scss";
 const UserCard = () => {
+    // placeholder for generate button
     const onGenerate = () => {
         console.log("generate!");
     }  
