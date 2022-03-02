@@ -1,9 +1,9 @@
 // navigation between home, history, about, and their content
 import React, { useState } from "react";
-import Tabs from "./Tabs"; 
+import Tabs from "./Navigation/Tabs"; 
 import { Outlet } from "react-router-dom";
 import "../../../wwwroot/style/Components/Dashboard/Navigation/NavigationLayout.scss";
-const NavigationLayout = (props) => {
+const StuffUnderUserCardLayout = (props) => {
     // state variable for the active tab
     const [selectedTab,setSelectedTab] = useState(1);
 
@@ -19,4 +19,4 @@ const NavigationLayout = (props) => {
     </>)
 }
 
-export default NavigationLayout;
+export default StuffUnderUserCardLayout;

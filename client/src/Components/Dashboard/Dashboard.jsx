@@ -1,12 +1,12 @@
 // component to wrap content for home, about, and history
 import React from "react";
 import DashboardLayout from "./DashboardLayout";
-import NavigationLayout from "./Navigation/NavigationLayout";
+import StuffUnderUserCardLayout from "./StuffUnderUserCardLayout";
 const Dashboard = () => {
 
     return (<>
         <DashboardLayout>
-            <NavigationLayout />
+            <StuffUnderUserCardLayout />
         </DashboardLayout>
     </>)
 }

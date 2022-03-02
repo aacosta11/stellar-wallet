@@ -9,3 +9,8 @@ a non-custodial wallet aiming to hold all assets associated with the Stellar Net
 - connect to dotnet web api
 - add inputs to operations
 - generate and fund keypairs
+
+## todo
+
+- update stylesheet locations / names
+- fix import paths (if any)
